@@ -11,8 +11,9 @@ const[friends, setFriends]=useState ([]);
 useEffect(()=>{
      // fetch ('')->using api url
          fetch('https://jsonplaceholder.typicode.com/users')
-         
+     //  api data obj json formet
          .then(res=> res.json())
+     //     data show setFriends method
          .then (data=> setFriends(data))
 
 }, [])
@@ -21,8 +22,11 @@ useEffect(()=>{
 
      return (
         <div className="user">
+          {/* data length friends means data set api with setFriends function */}
    <h1>Friends:{friends.length}</h1>
    {
+     // use this friends.map
+     // use Friend.jsx and using <Friend></Friend> component using and import kora lagbe upore 
     friends.map(friend=> <Friend friend={friend}></Friend>)
    }
         </div>
